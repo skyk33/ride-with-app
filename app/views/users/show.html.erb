@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <%= render 'shared/header'%>
+  <div class="my-profile">
+
+    <div class="page-title">
+      <h2>My Page</h2>
+    </div>
+
+    <div class="account-info">
+      <h3>アカウント情報</h3>
+      <table class="account-table", border="1">
+        <tr>
+          <td>Eメール</td><td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <td>生年月日</td><td><%= @user.birthday %></td>
+        </tr>
+      </table>
+      <div class="btn">
+        <a class="edit-btn", href="#" role="button">編集</a>
+      </div>
+    </div>
+
+    <div class="profile">
+      <h3>プロフィール</h3>
+      <table class="profile-table">
+        <tr>
+          <td>ニックネーム</td><td><%= @profile.nickname %></td>
+        </tr>
+        <tr>
+          <td>現在の愛車</td><td><%= @profile.current_motorcycle %></td>
+        </tr>
+        <tr>
+          <td>バイクヒストリー</td><td><%= @profile.motorcycle_history %></td>
+        </tr>
+        <tr>
+          <td>憧れのバイク</td><td><%= @profile.dream_motorcycle %></td>
+        </tr>
+        <tr>
+          <td>好きなツーリングコース</td><td><%= @profile.fav_touring_routes %></td>
+        </tr>
+        <tr>
+          <td>そのほかの趣味・好きな事</td><td><%= @profile.other_hobbies %></td>
+        </tr>
+        <tr>
+          <td>みんなへメッセージ！</td><td><%= @profile.message %></td>
+        </tr>
+      </table>
+      <div class="btn">
+        <a class="edit-btn", href="#" role="button">編集</a>
+      </div>
+    </div>
+
+  </div>
+  <%= render 'shared/footer'%>
+</div>
