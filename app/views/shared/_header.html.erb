@@ -1,18 +1,35 @@
 <header class="top-header">
 
-  <dir class="app-logo">
-    <%= link_to "RIDE with US", root_path, class: "logo" %>
-  </dir>
+  <% if user_signed_in? %>
+    <div class="app-logo">
+      <%= link_to "RIDE with US", "#", class: "logo"%>
+    </div>
 
-  <div class="nav">
-    <ul class="nav-menu">
-      <li>
-        <%= link_to "ログイン", "#", class: "menu-item" %>
-      </li>
-      <li>
-        <%= link_to "アカウント作成", "#", class: "menu-item"%>
-      </li>
-    </ul>
-  </div>
+    <div class="nav">
+      <ul class="nav-menu">
+          <li><%= link_to "ツーリングを企画する", "#", class: "menu-item"%></li>
+          <li><%= link_to "マイページ", "#", class: "menu-item" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu-item" %></li>
+      </ul>
+    </div>
+
+  <% else %>
+    
+    <dir class="app-logo">
+      <%= link_to "RIDE with US", root_path, class: "logo" %>
+    </dir>
+
+    <div class="nav">
+      <ul class="nav-menu">
+        <li>
+          <%= link_to "ログイン", new_user_session_path, class: "menu-item" %>
+        </li>
+        <li>
+          <%= link_to "アカウント作成", new_user_registration_path, class: "menu-item"%>
+        </li>
+      </ul>
+    </div>
+
+  <% end %>
 
 </header>
