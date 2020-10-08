@@ -70,11 +70,17 @@
 準備中
 
 # ローカル環境構築
-$ git clone 
-$ cd hoge
+（準備中）
+$ git clone
+
+$ cd #アプリ名
+
 $ bundle install
+
 $ rails db:create
+
 $ rails db:migrate
+
 $ rails s
 
 # 必要条件
