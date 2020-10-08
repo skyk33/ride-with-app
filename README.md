@@ -1,24 +1,83 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# RIDE with App
+バイカーのためのツーリング企画＆コミュニケーションアプリ。
+気軽にツーリングを企画＆参加できます。
 
-Things you may want to cover:
+# URL
+準備中
 
-* Ruby version
+# テスト用アカウント情報
+準備中
 
-* System dependencies
+# 概要
+ユーザ登録することで以下のサービスが利用可能になります。
+* プロフィール管理機能
+  - 自身のプロフィールの作成・編集
+  - 他ユーザのプロフィール表示
 
-* Configuration
+* ツーリングイベント機能
+  - イベントの作成・編集
+  - イベントの検索
+  - イベント詳細上でのコメント
 
-* Database creation
+# 目指した課題解決
+バイク好きが抱える以下の悩みを解決
+- 最近友達のバイク離れが激しい
+- 急に予定が空いたけど誰とも予定があわない
+- もっとバイク仲間を増やしたい
 
-* Database initialization
+# 要件
+* ユーザ管理機能
+  - Deviseによりユーザ管理（サインアップ、ログイン、ログアウト）
+* プロフィール/MyPage機能
+  - ユーザ登録情報の編集
+  - プロフィールの編集
+  - プロフィール表示
+* イベント機能
+  - イベント作成・編集
+  - イベント一覧表示
+  - イベント詳細表示
+  - イベント検索
+  - イベント参加
+  - 参加イベント一覧表示
+* コメント機能
+  - イベント詳細ページ上でのコメント投稿
 
-* How to run the test suite
+# 利用方法
+### 登録情報、プロフィールの編集(未実装)
+1. ログイン/アカウント作成
+2. メニューよりマイページへ
+3. 編集ボタンを押す
+4. 変更を入力し更新ボタンを押す
 
-* Services (job queues, cache servers, search engines, etc.)
+### イベントの作成（未実装）
+1. ログイン/アカウント作成
+2. メニューよりイベント作成ページへ
+3. フォームに必要事項を入力
+4. 「作成する」ボタンを押す
 
-* Deployment instructions
+### イベント参加（未実装）
+1. ログイン/アカウント作成
+2. ログイン後トップ画面よりイベントを選択
+3. 詳細ページのコメント投稿より参加表明のコメントをする
 
-* ...
+### イベント検索（未実装）
+1. ログイン/アカウント作成
+2. ログイン後トップページより日付にて検索
+
+# DB設計
+準備中
+
+# ローカル環境構築
+$ git clone 
+$ cd hoge
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+
+# 必要条件
+Ruby version: 2.6.5
+Ruby on Rails: 6.0.0
+Database: MySQL2
