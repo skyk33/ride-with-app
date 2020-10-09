@@ -22,30 +22,7 @@
     </div>
 
     <div class="profile">
-      <h3>プロフィール</h3>
-      <table class="profile-table">
-        <tr>
-          <td>ニックネーム</td><td><%= @profile.nickname %></td>
-        </tr>
-        <tr>
-          <td>現在の愛車</td><td><%= @profile.current_motorcycle %></td>
-        </tr>
-        <tr>
-          <td>バイクヒストリー</td><td><%= @profile.motorcycle_history %></td>
-        </tr>
-        <tr>
-          <td>憧れのバイク</td><td><%= @profile.dream_motorcycle %></td>
-        </tr>
-        <tr>
-          <td>好きなツーリングコース</td><td><%= @profile.fav_touring_routes %></td>
-        </tr>
-        <tr>
-          <td>そのほかの趣味・好きな事</td><td><%= @profile.other_hobbies %></td>
-        </tr>
-        <tr>
-          <td>みんなへメッセージ！</td><td><%= @profile.message %></td>
-        </tr>
-      </table>
+      <%= render 'shared/profile' %>
       <div class="btn">
         <a class="edit-btn", href="#" role="button">編集</a>
       </div>

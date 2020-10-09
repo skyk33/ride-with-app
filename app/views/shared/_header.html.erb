@@ -8,7 +8,7 @@
     <div class="nav">
       <ul class="nav-menu">
           <li><%= link_to "ツーリングを企画する", "#", class: "menu-item"%></li>
-          <li><%= link_to "マイページ", "#", class: "menu-item" %></li>
+          <li><%= link_to "マイページ", user_path(current_user.id), class: "menu-item" %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu-item" %></li>
       </ul>
     </div>
