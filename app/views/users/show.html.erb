@@ -6,6 +6,8 @@
       <h2>My Page</h2>
     </div>
 
+    <%= render 'shared/notifications' %>
+
     <div class="account-info">
       <h3>アカウント情報</h3>
       <table class="account-table", border="1">
@@ -17,7 +19,8 @@
         </tr>
       </table>
       <div class="btn">
-        <a class="edit-btn", href="#" role="button">編集</a>
+        <!--<a class="edit-btn", href="#" role="button">編集</a> -->
+        <%= link_to "編集", edit_user_path, class: "link-path" %>
       </div>
     </div>
 

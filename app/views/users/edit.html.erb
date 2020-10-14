@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <%= render "shared/header" %>
+
+  <div class="form-title">
+    <h2>Edit Account</h2>
+  </div>
+  
+  <div class="form-main">
+    <%= form_with model: @user, local: true do |f| %>
+      <%#= render "devise/shared/error_messages", resource: @user %>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="field">
+        <%= f.label :birthday %><br />
+        <%= f.date_select(
+                        :birthday,
+                        class:'select-birth',
+                        id:"birth-date",
+                        use_month_numbers: true,
+                        prompt:'--',
+                        start_year: 1955,
+                        end_year: (Time.now.year - 19)) %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><i>(leave blank if you don't want to change it)</i><br />
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+    <% end %>
+
+    <div class="btn">
+      <%= link_to "マイページに戻る", user_path(current_user.id) %>
+    </div>
+
+    <%#= render "devise/shared/links" %>
+  </div>
+
+  <%= render "shared/footer" %>
+
+</div>

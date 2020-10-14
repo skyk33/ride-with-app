@@ -10,4 +10,11 @@ class User < ApplicationRecord
   end
 
   has_one :profile
+
+  def update_without_password(params)
+    self.attributes = params
+    result = self.save(validate: false)
+    clean_up_passwords
+    result
+  end
 end
