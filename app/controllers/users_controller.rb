@@ -17,11 +17,11 @@ class UsersController < ApplicationController
     end
 
     successfully_updated = if needs_password?(@user, user_params)
-                              @user.update(user_params)
-                            else
-                              @user.update_without_password(user_params)
-                            end
-    
+                             @user.update(user_params)
+                           else
+                             @user.update_without_password(user_params)
+                           end
+
     if successfully_updated
       redirect_to @user, notice: 'User was updated'
     else
@@ -38,11 +38,10 @@ class UsersController < ApplicationController
   end
 
   def user_params
-      params.require(:user).permit(:birthday, :email, :password, :password_confirmation)
+    params.require(:user).permit(:birthday, :email, :password, :password_confirmation)
   end
 
   def needs_password?(_user, params)
     params[:password].present?
   end
-
 end

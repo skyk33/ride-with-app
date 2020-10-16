@@ -27,7 +27,8 @@
     <div class="profile">
       <%= render 'shared/profile' %>
       <div class="btn">
-        <a class="edit-btn", href="#" role="button">編集</a>
+  <!--<a class="edit-btn", href="#" role="button">編集</a>-->
+        <%= link_to "編集", edit_user_profile_path(current_user.id), class: "link-path" %>
       </div>
     </div>
 

@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <%= render 'shared/header' %>
+  <div class="page-title">
+    <h2>Edit Profile</h2>
+  </div>
+
+  <%= render 'shared/notifications' %>
+
+  <div class="form-main">
+
+  <%= form_with model: @profile, url: user_profile_path, local: true do |f| %>
+
+    <%= render partial: "shared/profile_form", locals: { f: f } %>
+    
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/footer'%>
+
+</div>

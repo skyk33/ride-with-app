@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   def update_without_password(params)
     self.attributes = params
-    result = self.save(validate: false)
+    result = save(validate: false)
     clean_up_passwords
     result
   end
