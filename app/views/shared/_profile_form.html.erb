@@ -1,0 +1,49 @@
+
+<%= render 'shared/error_messages', model: f.object %>
+
+<div class="user-img">
+  <% if @profile.image.attached? %>
+    <%= image_tag @profile.image.variant(resize: '140x140'), class: 'profile-img'%>
+  <% else %>
+    <%= image_tag 'sample.png', size: '140x140' %>
+  <% end %>
+</div>
+
+<div class="field">
+  <%= f.label :image %><br />
+  <%= f.file_field :image %>
+</div>
+
+<div class="field">
+  <%= f.label :nickname %><br />
+  <%= f.text_field :nickname, placeholder: "Enter your nickname" %>
+</div>
+
+<div class="field">
+  <%= f.label :current_motorcycle %><br />
+  <%= f.text_field :current_motorcycle, placeholder: "eg) Honda CB400 Super Four" %>
+</div>
+
+<div class="field">
+  <%= f.label :motorcycle_history %><br />
+  <%= f.text_area :motorcycle_history, rows: 5, placeholder: "eg) 1990-2000: Kawasaki Estrella, My first motorcycle!" %>
+</div>
+
+<div class="field">
+  <%= f.label :dream_motorcycle %><br />
+  <%= f.text_field :dream_motorcycle, placeholder: "eg) Triumph Thruxton 1200 " %>
+</div>
+
+<div class="field">
+  <%= f.label :fav_touring_routes %><br />
+  <%= f.text_area :fav_touring_routes, rows: 3, placeholder: "eg) 自宅から実家までの間にある農道と川沿いの道！自然豊かで車も少なくて気持ちいです！" %>
+</div>
+
+<div class="field">
+  <%= f.label :other_hobbies %><br />
+  <%= f.text_area :other_hobbies, rows: 3, placeholder: "eg) 映画鑑賞（アクションとスリラーが好き）、キャンプ" %>
+</div>
+
+<div class="field">
+  <%= f.label :message %><br />
+  <%= f.text_area :message, rows: 3, placeholder: "eg) バイク仲間募集中です！一緒にツーリングに出かけましょう！" %>

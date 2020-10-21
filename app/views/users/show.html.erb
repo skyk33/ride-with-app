@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <%= render 'shared/header'%>
+  <div class="my-profile">
+
+    <div class="page-title">
+      <h2>My Page</h2>
+    </div>
+
+    <%= render 'shared/notifications' %>
+
+    <div class="profile">
+      <%= render 'shared/profile' %>
+      <div class="btn">
+  <!--<a class="edit-btn", href="#" role="button">編集</a>-->
+        <%= link_to "編集", edit_user_profile_path(current_user.id), class: "link-path" %>
+      </div>
+    </div>
+
+    <div class="account-info">
+      <h3>アカウント情報</h3>
+      <table class="account-table", border="1">
+        <tr>
+          <td>Eメール</td><td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <td>生年月日</td><td><%= @user.birthday %></td>
+        </tr>
+      </table>
+      <div class="btn">
+        <!--<a class="edit-btn", href="#" role="button">編集</a> -->
+        <%= link_to "編集", edit_user_path, class: "link-path" %>
+      </div>
+    </div>
+
+  </div>
+  <%= render 'shared/footer'%>
+</div>
