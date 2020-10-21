@@ -1,3 +1,11 @@
+<div class="user-img">
+  <% if @profile.image.attached? %>
+    <%= image_tag @profile.image.variant(resize: '140x140'), class: 'profile-img'%>
+  <% else %>
+    <%= image_tag 'sample.png', size: '140x140' %>
+  <% end %>
+</div>
+
 <h3>プロフィール</h3>
 <table class="profile-table">
   <tr>

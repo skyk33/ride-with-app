@@ -9,7 +9,7 @@
   <div class="profile">
   <%= render 'shared/profile' %>
 
-  <% if current_user == @profile.user_id? %>
+  <% if current_user.id == @profile.user_id %>
     <div class="btn">
       <%= link_to "編集", edit_user_profile_path(params[:id]) %>
     </div>

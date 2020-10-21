@@ -1,6 +1,19 @@
 
 <%= render 'shared/error_messages', model: f.object %>
 
+<div class="user-img">
+  <% if @profile.image.attached? %>
+    <%= image_tag @profile.image.variant(resize: '140x140'), class: 'profile-img'%>
+  <% else %>
+    <%= image_tag 'sample.png', size: '140x140' %>
+  <% end %>
+</div>
+
+<div class="field">
+  <%= f.label :image %><br />
+  <%= f.file_field :image %>
+</div>
+
 <div class="field">
   <%= f.label :nickname %><br />
   <%= f.text_field :nickname, placeholder: "Enter your nickname" %>

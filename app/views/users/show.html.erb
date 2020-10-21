@@ -8,6 +8,14 @@
 
     <%= render 'shared/notifications' %>
 
+    <div class="profile">
+      <%= render 'shared/profile' %>
+      <div class="btn">
+  <!--<a class="edit-btn", href="#" role="button">編集</a>-->
+        <%= link_to "編集", edit_user_profile_path(current_user.id), class: "link-path" %>
+      </div>
+    </div>
+
     <div class="account-info">
       <h3>アカウント情報</h3>
       <table class="account-table", border="1">
@@ -21,14 +29,6 @@
       <div class="btn">
         <!--<a class="edit-btn", href="#" role="button">編集</a> -->
         <%= link_to "編集", edit_user_path, class: "link-path" %>
-      </div>
-    </div>
-
-    <div class="profile">
-      <%= render 'shared/profile' %>
-      <div class="btn">
-  <!--<a class="edit-btn", href="#" role="button">編集</a>-->
-        <%= link_to "編集", edit_user_profile_path(current_user.id), class: "link-path" %>
       </div>
     </div>
 
