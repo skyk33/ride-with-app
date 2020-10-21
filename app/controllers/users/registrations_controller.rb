@@ -40,7 +40,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :dream_motorcycle,
       :fav_touring_routes,
       :other_hobbies,
-      :message
+      :message,
+      :image
     )
   end
 
