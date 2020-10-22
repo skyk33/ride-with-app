@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_10_22_063359) do
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.date "date", null: false
-    t.string "region", null: false
     t.integer "prefecture_id", null: false
     t.string "meeting_point", null: false
     t.text "details", null: false
