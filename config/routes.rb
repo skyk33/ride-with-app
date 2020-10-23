@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :profiles, only: [:show, :edit, :update]
   end
-  resources :events, only: [:index]
+  resources :events, only: [:index, :new, :create, :show]
   root 'home#index'
 end

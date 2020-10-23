@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <%= render "shared/header" %>
+
+  <%= render 'shared/notifications' %>
+
+  <div class="form-title">
+    <h2>ツーリングイベント作成</h2>
+  </div>
+  
+  <div class="form-main">
+    <%= form_with model: @event, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="field">
+        <%= f.label :title %><br />
+        <%= f.text_field :title, autofocus: true, placeholder: '例）○月○日　富士山ツーリング行きましょう！' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :date %><br />
+        <%= f.date_field :date, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :meetup_time%>
+        <%= f.time_select :meetup_time, minute_step: 15, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :prefecture %><br />
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+      </div>
+
+      <div class="field">
+        <%= f.label :meeting_point %><br/>
+        <%= f.text_field :meeting_point, autofocus: true, placeholder: '石川PA(下り)'%>
+      </div>
+
+      <div class="field">
+        <%= f.label :details %><br/>
+        <%= f.text_area :details, autofocus: true, size: '50x10', value: "[ルート詳細]\n\n\n\n[参加者へのメッセージ]" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create Event" %>
+      </div>
+    <% end %>
+
+    <div class="btn">
+      <%= link_to "TOP", root_path %>
+    </div>
+
+    <%#= render "devise/shared/links" %>
+  </div>
+
+<%= render 'shared/footer'%>
+
+</div>
