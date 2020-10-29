@@ -5,24 +5,35 @@
   </div>
 
   <div class="event-details">
+    <div class="owner-image">
+      <h5>イベントオーナー</h5>
+      <%= link_to user_profile_path(@event.user_id), class: "profile-link", method: :get do %>
+        <% if @event.user.profile.image.attached? %>
+          <%= image_tag @event.user.profile.image.variant(resize: '140x140') %>
+        <% else %>
+          <%= image_tag 'sample.png', size: '140x140' %>
+        <% end %>
+        <%= @event.user.profile.nickname %>
+      <% end %>
+    </div>
+    </div>
+
     <div class="event-title">
       <h2><%= @event.title %></h2>
     </div>
 
     <div class="event-details-show">
       <div class="event-item">
-        <h3 class="item-title">主催者</h3>
-        <h3 class="item-detail">
-          <%= link_to user_profile_path(@event.user_id), class: "profile-link", method: :get do %>
-            <%= @event.user.profile.nickname %>
-          <% end %>
-        </h3>
-      </div>
-      <div class="event-item">
         <h3 class="item-title">日程</h3>
         <h3 class="item-detail">
           <%="#{@event.date.year}年#{@event.date.month}月#{@event.date.day}日" %>
         </h3>
+      </div class="event-item">
+        <h3 class="item-title">集合場所</h3>
+        <h3 class="item-detail">
+          <%= @event.meeting_point %>
+        </h3>
+      <div>
       </div>
       <div class="event-item">
         <h3 class="item-title">集合時間</h3>
