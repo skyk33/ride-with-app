@@ -1,1 +1,49 @@
-<h1><%= @event.title %></h1>
+<div class="wrapper">
+  <%= render 'shared/header' %>
+  <div class="page-title">
+    <h1>ツーリング詳細</h1>
+  </div>
+
+  <div class="event-details">
+    <div class="event-title">
+      <h2><%= @event.title %></h2>
+    </div>
+
+    <div class="event-details-show">
+      <div class="event-item">
+        <h3 class="item-title">主催者</h3>
+        <h3 class="item-detail">
+          <%= link_to user_profile_path(@event.user_id), class: "profile-link", method: :get do %>
+            <%= @event.user.profile.nickname %>
+          <% end %>
+        </h3>
+      </div>
+      <div class="event-item">
+        <h3 class="item-title">日程</h3>
+        <h3 class="item-detail">
+          <%="#{@event.date.year}年#{@event.date.month}月#{@event.date.day}日" %>
+        </h3>
+      </div>
+      <div class="event-item">
+        <h3 class="item-title">集合時間</h3>
+        <h3 class="item-detail">
+          <%= @event.meetup_time.strftime('%H:%M') %>
+        </h3>
+      </div>
+      <div class="event-item">
+        <h3 class="item-title">詳細</h3>
+        <div class="details-textarea">
+        <%= simple_format(text_url_to_link((@event.details)).html_safe) %>
+        </div>
+      </div>
+
+      <% if current_user.id == @event.user_id %>
+        <div class="btn">
+          <%= link_to "編集", "#" %>
+        </div>
+      <% end %>
+    </div>
+  </div>  
+
+  <%= render 'shared/footer' %>
+</div>
