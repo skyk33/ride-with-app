@@ -1,0 +1,24 @@
+<div class="field">
+  <%= f.label :title %><br />
+  <%= f.text_field :title, autofocus: true, placeholder: '例）○月○日　富士山ツーリング行きましょう！' %>
+</div>
+
+<div class="field">
+  <%= f.label :date %><br />
+  <%= f.date_field :date, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= f.label :meetup_time%>
+  <%= f.time_select :meetup_time, minute_step: 15, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= f.label :prefecture %><br />
+  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+</div>
+
+<div class="field">
+  <%= f.label :meeting_point %><br/>
+  <%= f.text_field :meeting_point, autofocus: true, placeholder: '石川PA(下り)'%>
+</div>

@@ -4,7 +4,7 @@
   <%= render 'shared/notifications' %>
 
   <div class="form-title">
-    <h2>ツーリングイベント作成</h2>
+    <h2>ツーリングイベント編集</h2>
   </div>
   
   <div class="form-main">
@@ -15,11 +15,11 @@
 
       <div class="field">
         <%= f.label :details %><br/>
-        <%= f.text_area :details, autofocus: true, size: '50x10', value: "[ルート詳細]\n\n\n\n[参加者へのメッセージ]" %>
+        <%= f.text_area :details, autofocus: true, size: '50x10' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Create Event" %>
+        <%= f.submit "Update Event" %>
       </div>
     <% end %>
 
@@ -33,3 +33,4 @@
 <%= render 'shared/footer'%>
 
 </div>
+

@@ -39,7 +39,7 @@
 
       <% if current_user.id == @event.user_id %>
         <div class="btn">
-          <%= link_to "編集", "#" %>
+          <%= link_to "編集", edit_event_path(params[:id]) %>
         </div>
       <% end %>
     </div>
