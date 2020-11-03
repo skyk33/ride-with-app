@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_event, only: [:show, :edit, :update]
+  before_action :check_user, only: [:edit, :update]
+
   def index
     @events = Event.includes(:user).order('created_at DESC')
   end
@@ -17,15 +21,12 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to root_path
     else
@@ -44,5 +45,13 @@ class EventsController < ApplicationController
       :meeting_point,
       :details
     ).merge(user_id: current_user.id)
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  def check_user
+    redirect_to root_path if current_user.id != @event.user_id
   end
 end
