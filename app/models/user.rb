@@ -10,6 +10,7 @@ class User < ApplicationRecord
   end
 
   has_one :profile
+  has_many :events
 
   def update_without_password(params)
     self.attributes = params
